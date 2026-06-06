@@ -1,0 +1,49 @@
+---
+header:
+  id: EFC://hace.fem.sio.v1
+  intent: DEFINE_RUNTIME_INTERMEDIATE_FORMAT
+  status: CANONICAL_DRAFT
+  locale: vi-85
+  version: "1.0.0"
+  authority: HACEDLE
+---
+
+# FEM-SIO - Structured Intent Object
+
+## Role
+role: Runtime IR Layer (Brain Intermediate Representation)
+
+## Structure
+structure:
+  schema/:
+    - header.rs
+    - intent.rs
+    - knowledge.rs
+    - ruleset.rs
+    - reality.rs
+    - runtime.rs
+    - context.rs
+    - outcome.rs
+  builder/:
+    - sio_builder.rs
+    - packet_merger.rs
+    - profile_injector.rs
+  validator/:
+    - schema_validator.rs
+    - authority_validator.rs
+    - integrity_validator.rs
+  seal/:
+    - signer.rs
+    - verifier.rs
+  serializer/:
+    - sio.rs
+    - sioz.rs
+    - siob.rs
+
+## Brain Contract
+contract: |
+  pub trait BrainRuntime {
+      fn execute(sio: RuntimeSio) -> Result<SioOutcome, RuntimeError>;
+  }
+
+---

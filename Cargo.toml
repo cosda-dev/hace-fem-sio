@@ -1,0 +1,17 @@
+[package]
+name = "hace-fem-sio"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "FEM-SIO: Structured Intent Object - Brain Runtime IR"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+uuid = { version = "1.0", features = ["v4"] }
+
+[features]
+default = ["alloc"]
+alloc = []
+std = []
+
+[dev-dependencies]
